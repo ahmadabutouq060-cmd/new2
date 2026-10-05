@@ -3717,7 +3717,7 @@
       hook: "A living mystery along the Yarmouk: four hidden clues, a KHAYT companion, and a thread that branches.",
 
       city: "Irbid",
-      region: "Yarmouk River Gorge", image: "assets/irbid-bride-of-the-north.png", imageSubject: "Irbid",
+      region: "Yarmouk River Gorge", image: "assets/places/irbid/yarmouk-trail-head.jpg", imageSubject: "Yarmouk Trail Head",
 
       waypoints: 4,
       duration: "1 day",
