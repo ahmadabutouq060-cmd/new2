@@ -798,8 +798,8 @@
           challenge:
             "Identify 4 migratory bird species using the field guide at the trail head. Record each species, the time spotted, and its direction of flight in your thread journal.",
 
-          image: "assets/places/irbid/yarmouk-river-gorge.svg",
-          imageStatus: "placeholder",
+          image: "assets/places/irbid/yarmouk-river-gorge.jpg",
+          
         },
 
         {
@@ -1036,8 +1036,8 @@
           fieldNote:
             "On site: read the trail stone and note what is cut into it before you choose an answer.",
 
-          image: "assets/places/irbid/yarmouk-trail-head.svg",
-          imageStatus: "placeholder",
+          image: "assets/places/irbid/yarmouk-trail-head.jpg",
+          
 
           unlocksClue: 1,
 
@@ -1087,8 +1087,8 @@
           fieldNote:
             "On site: look for the columnar jointing before you answer, and count the separate lava flows you can pick out.",
 
-          image: "assets/places/irbid/basalt-canyon-viewpoint.svg",
-          imageStatus: "placeholder",
+          image: "assets/places/irbid/basalt-canyon-viewpoint.jpg",
+          
 
           unlocksClue: 2,
 
@@ -1163,8 +1163,8 @@
           fieldNote:
             "On site: use the identification chart for a 30-minute count and record the species, their behaviour and their direction of flight.",
 
-          image: "assets/places/irbid/migratory-bird-watch-station.svg",
-          imageStatus: "placeholder",
+          image: "assets/places/irbid/migratory-bird-watch-station.jpg",
+          
 
           chapterKey: "follow",
 
@@ -1218,8 +1218,8 @@
           fieldNote:
             "On site: identify the wild herbs growing along the bank, and try the za'atar with a local guide if one is with you.",
 
-          image: "assets/places/irbid/riverside-picnic-meadow.svg",
-          imageStatus: "placeholder",
+          image: "assets/places/irbid/riverside-picnic-meadow.jpg",
+          
 
           finalAnswer: true,
 
@@ -1381,8 +1381,8 @@
           challenge:
             "Identify three native tree species at the forest gate using the species board. Record their scientific names, and describe how each tree species contributes to the forest ecosystem.",
 
-          image: "assets/places/ajloun/ajloun-forest-reserve-gate.svg",
-          imageStatus: "placeholder",
+          image: "assets/places/ajloun/ajloun-forest-reserve-gate.jpg",
+          
         },
 
         {
@@ -1434,8 +1434,8 @@
           challenge:
             "Measure the circumference of the widest olive trunk in the grove. Using the standard growth rate of 2.5 cm per year, estimate the tree's minimum age. Document your method and result.",
 
-          image: "assets/places/ajloun/ancient-olive-grove.svg",
-          imageStatus: "placeholder",
+          image: "assets/places/ajloun/ancient-olive-grove.jpg",
+          
         },
 
         {
@@ -1495,6 +1495,7 @@
             "Harvest olives from at least three trees using the traditional raking method. Weigh your harvest and estimate how many litres of oil a full season's yield from those trees would produce.",
 
           image: "assets/places/ajloun/olive-grove-harvest.jpg",
+          
         },
 
         {
@@ -1588,8 +1589,8 @@
           challenge:
             "Walk the full Soap Trail (8 km) and document every plant species you can identify using the trail guide. Note the GPS waypoints of any wildlife sightings.",
 
-          image: "assets/places/ajloun/ajloun-forest-main-trail.svg",
-          imageStatus: "placeholder",
+          image: "assets/places/ajloun/ajloun-forest-main-trail.jpg",
+          
         },
 
         {
@@ -1812,8 +1813,8 @@
           challenge:
             "Find a vendor selling a product made locally (not imported). Ask them to explain the production process and the locally sourced materials. Photograph both the product and the raw material.",
 
-          image: "assets/places/jerash/old-city-souk.svg",
-          imageStatus: "placeholder",
+          image: "assets/places/jerash/old-city-souk.webp",
+          
         },
 
         {
@@ -1864,8 +1865,8 @@
           challenge:
             "Identify one craft produced by the Circassian community and one produced by the indigenous Jordanian community. Describe two specific differences in technique, motif, or material between them.",
 
-          image: "assets/places/jerash/craft-workshops-quarter.svg",
-          imageStatus: "placeholder",
+          image: "assets/places/jerash/craft-workshops-quarter.webp",
+          
         },
       ],
     },
@@ -2350,8 +2351,8 @@
           challenge:
             "Visit the salt pillar and describe the geological process — evaporite deposition — that actually creates salt pillars in this landscape, and explain why this area has generated multiple such formations.",
 
-          image: "assets/places/dead-sea/lots-pillar-viewpoint.svg",
-          imageStatus: "placeholder",
+          image: "assets/places/dead-sea/lots-pillar-viewpoint.webp",
+          
         },
       ],
     },
@@ -2409,8 +2410,8 @@
           challenge:
             "Float for 20 minutes while consciously relaxing all muscles. Afterwards, record your heart rate and breathing rate and compare them to your measurements before entering.",
 
-          image: "assets/places/dead-sea/mineral-water-float.svg",
-          imageStatus: "placeholder",
+          image: "assets/places/dead-sea/mineral-water-float.webp",
+          
         },
 
         {
@@ -2770,8 +2771,7 @@
           challenge:
             "Measure the water temperature in the main pool and in the natural rock channels. Record the temperature gradient from the hottest spring source to the cooled pool and explain why the temperature drops over distance.",
 
-          image: "assets/places/madaba/main-hot-springs-resort.svg",
-          imageStatus: "placeholder",
+          image: "assets/places/madaba/main-hot-springs-resort.jpg",
         },
 
         {
@@ -3741,7 +3741,7 @@
       hook: "Trace Irbid's living history from a Bronze Age mound to a 30,000-student university and its bustling souk.",
 
       city: "Irbid",
-      region: "Irbid City Centre", image: "assets/places/irbid/yarmouk-university.svg", imageStatus: "placeholder", imageSubject: "Yarmouk University",
+      region: "Irbid City Centre", image: "assets/places/irbid/yarmouk-university.jpg", imageSubject: "Yarmouk University",
 
       waypoints: 4,
       duration: "1 day",
@@ -3789,7 +3789,7 @@
       hook: "Follow a single olive from the ancient tree to the stone press to a guesthouse table — all in one day.",
 
       city: "Ajloun",
-      region: "Ajloun Olive Groves", image: "assets/places/ajloun/olive-grove-harvest.jpg", imageSubject: "Olive Grove Harvest",
+      region: "Ajloun Olive Groves", image: "assets/places/ajloun/olive-grove-harvest.jpg",  imageSubject: "Olive Grove Harvest",
 
       waypoints: 4,
       duration: "1 day",
@@ -3813,7 +3813,7 @@
       hook: "Hike through one of the Levant's last pine forests, spot roe deer at dusk, and sleep under the stars.",
 
       city: "Ajloun",
-      region: "Ajloun Highland Trails", image: "assets/places/ajloun/ajloun-forest-main-trail.svg", imageStatus: "placeholder", imageSubject: "Ajloun Forest Main Trail",
+      region: "Ajloun Highland Trails", image: "assets/places/ajloun/ajloun-forest-main-trail.jpg",  imageSubject: "Ajloun Forest Main Trail",
 
       waypoints: 4,
       duration: "2 days",
@@ -3861,7 +3861,7 @@
       hook: "Discover the workshops, markets, and reservoir of a city still shaped by 2,000 years of continuous culture.",
 
       city: "Jerash",
-      region: "Old City & Souk", image: "assets/places/jerash/old-city-souk.svg", imageStatus: "placeholder", imageSubject: "Old City Souk",
+      region: "Old City & Souk", image: "assets/places/jerash/old-city-souk.webp",  imageSubject: "Old City Souk",
 
       waypoints: 4,
       duration: "1 day",
@@ -4005,7 +4005,7 @@
       hook: "Let 34% salinity mineral-rich mud do what clinics charge thousands for — right on the ancient shore.",
 
       city: "Dead Sea",
-      region: "Dead Sea Resorts", image: "assets/places/dead-sea/dead-sea-mud-spa.svg", imageStatus: "placeholder", imageSubject: "Dead Sea Mud Spa",
+      region: "Dead Sea Resorts", image: "assets/places/dead-sea/dead-sea-mud-spa.jpg", imageSubject: "Dead Sea Mud Spa",
 
       waypoints: 3,
       duration: "1 day",
@@ -4077,7 +4077,7 @@
       hook: "From the summit Moses saw the Promised Land — see it yourself, then descend to Herod's imprisoned prophet.",
 
       city: "Madaba",
-      region: "Mount Nebo & Beyond", image: "assets/places/madaba/mount-nebo-moses-viewpoint.svg", imageStatus: "placeholder", imageSubject: "Mount Nebo — Moses Viewpoint",
+      region: "Mount Nebo & Beyond", image: "assets/places/madaba/mount-nebo-moses-viewpoint.jpg", imageSubject: "Mount Nebo — Moses Viewpoint",
 
       waypoints: 4,
       duration: "1 day",
@@ -4101,7 +4101,7 @@
       hook: "Immerse in 63°C mineral springs that Herod the Great bathed in — then follow the waterfall to the canyon floor.",
 
       city: "Madaba",
-      region: "Ma'in Hot Springs", image: "assets/places/madaba/main-hot-springs-resort.svg", imageStatus: "placeholder", imageSubject: "Ma'in Hot Springs Resort",
+      region: "Ma'in Hot Springs", image: "assets/places/madaba/main-hot-springs-resort.jpg", imageSubject: "Ma'in Hot Springs Resort",
 
       waypoints: 3,
       duration: "1 day",
@@ -4173,7 +4173,7 @@
       hook: "Wade a basalt canyon where a 20-metre thermal waterfall meets mineral-stained cliffs above the Moabite plateau.",
 
       city: "Karak",
-      region: "Wadi Ibn Hammad", image: "assets/places/karak/wadi-ibn-hammad-canyon.svg", imageStatus: "placeholder", imageSubject: "Wadi Ibn Hammad Canyon",
+      region: "Wadi Ibn Hammad", image: "assets/places/karak/wadi-ibn-hammad-canyon.jpg", imageSubject: "Wadi Ibn Hammad Canyon",
 
       waypoints: 3,
       duration: "1 day",
@@ -4221,7 +4221,7 @@
       hook: "Sleep under the Milky Way in a Bedouin camp after watching the sandstone massifs turn blood-red at sunset.",
 
       city: "Ma'an",
-      region: "Wadi Rum Protected Area", image: "assets/places/maan/wadi-rum-visitor-gate.svg", imageStatus: "placeholder", imageSubject: "Wadi Rum Visitor Gate",
+      region: "Wadi Rum Protected Area", image: "assets/places/maan/wadi-rum-visitor-gate.jpg", imageSubject: "Wadi Rum Visitor Gate",
 
       waypoints: 5,
       duration: "2 days",
@@ -4245,7 +4245,7 @@
       hook: "Find a free Nabataean siq with painted frescoes, a 9,000-year-old village, and Bedouin bread on an open fire.",
 
       city: "Ma'an",
-      region: "Siq al-Barid & Al-Beidha", image: "assets/places/maan/little-petra-siq-al-barid.svg", imageStatus: "placeholder", imageSubject: "Little Petra (Siq al-Barid)",
+      region: "Siq al-Barid & Al-Beidha", image: "assets/places/maan/little-petra-siq-al-barid.jpg", imageSubject: "Little Petra (Siq al-Barid)",
 
       waypoints: 4,
       duration: "1 day",
@@ -4293,7 +4293,7 @@
       hook: "Walk from one of Islam's first planned cities to the Mamluk fort that T.E. Lawrence captured in an afternoon.",
 
       city: "Al-Aqaba",
-      region: "Aqaba Historic Quarter", image: "assets/places/aqaba/aqaba-fort-mamluk-castle.svg", imageStatus: "placeholder", imageSubject: "Aqaba Fort (Mamluk Castle)",
+      region: "Aqaba Historic Quarter", image: "assets/places/aqaba/aqaba-fort-mamluk-castle.jpg", imageSubject: "Aqaba Fort (Mamluk Castle)",
 
       waypoints: 4,
       duration: "1 day",
@@ -4317,7 +4317,7 @@
       hook: "Journey from the red sands of Wadi Rum to the turquoise Gulf of Aqaba — from starlight to sunrise on water.",
 
       city: "Al-Aqaba",
-      region: "Wadi Rum → Gulf of Aqaba", image: "assets/places/aqaba/wadi-rum-desert-departure.svg", imageStatus: "placeholder", imageSubject: "Wadi Rum Desert Departure",
+      region: "Wadi Rum → Gulf of Aqaba", image: "assets/places/aqaba/wadi-rum-desert-departure.jpg", imageSubject: "Wadi Rum Desert Departure",
 
       waypoints: 3,
       duration: "2 days",
@@ -6996,38 +6996,27 @@
         thread.imageStatus,
       )
 
-      // A library thread carries only a waypoint count, not the waypoint array.
-      // Resolve the canonical thread object before looking for an exact first-stop photo.
-      const canonicalThread =
-        threadsById && thread.id != null && threadsById[thread.id]
-          ? threadsById[thread.id]
-          : Array.isArray(thread.waypoints)
-            ? thread
-            : null
-
       if (fromThread && fromThread.kind !== "placeholder") return fromThread
 
-      const firstWp =
-        canonicalThread &&
-        Array.isArray(canonicalThread.waypoints) &&
-        canonicalThread.waypoints.length
-          ? canonicalThread.waypoints[0]
-          : null
+      const fullThread = (thread.id && this.getThread ? this.getThread(thread.id) : null) || thread
+
+      const firstWp = (fullThread && Array.isArray(fullThread.waypoints) && fullThread.waypoints[0]) || (Array.isArray(thread.waypoints) && thread.waypoints[0])
 
       if (firstWp) {
-        const wpPhoto = NASEEJ.data.waypointPhoto(firstWp)
+        const wpPhoto = this.waypointPhoto(firstWp)
 
         if (wpPhoto && wpPhoto.kind === "local") {
           return {
             src: wpPhoto.src,
+
             subject: wpPhoto.subject,
+
             scope: "thread",
+
             kind: "photo",
           }
         }
       }
-
-      if (fromThread) return fromThread
 
       const city = findCity(thread.city)
 
@@ -7040,6 +7029,8 @@
 
         if (fromCity) return fromCity
       }
+
+      if (fromThread) return fromThread
 
       return null
     },
