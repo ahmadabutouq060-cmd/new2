@@ -1389,7 +1389,7 @@
         color: "#EDB99E",
         width: "w-6",
         margin: "mb-6",
-        text: "Jordan Gamified",
+        text: "WEAVING STORIES · CONNECTING JORDAN",
       }) +
       '<h1 class="font-display text-6xl xl:text-7xl font-semibold leading-tight mb-6" style="color:#F9F7F3">Weave Your<br>' +
       '<em class="not-italic" style="color:#EDB99E">Jordanian</em><br>Story</h1>' +
