@@ -6996,6 +6996,37 @@
         thread.imageStatus,
       )
 
+      // A library thread carries only a waypoint count, not the waypoint array.
+      // Resolve the canonical thread object before looking for an exact first-stop photo.
+      const canonicalThread =
+        threadsById && thread.id != null && threadsById[thread.id]
+          ? threadsById[thread.id]
+          : Array.isArray(thread.waypoints)
+            ? thread
+            : null
+
+      if (fromThread && fromThread.kind !== "placeholder") return fromThread
+
+      const firstWp =
+        canonicalThread &&
+        Array.isArray(canonicalThread.waypoints) &&
+        canonicalThread.waypoints.length
+          ? canonicalThread.waypoints[0]
+          : null
+
+      if (firstWp) {
+        const wpPhoto = NASEEJ.data.waypointPhoto(firstWp)
+
+        if (wpPhoto && wpPhoto.kind === "local") {
+          return {
+            src: wpPhoto.src,
+            subject: wpPhoto.subject,
+            scope: "thread",
+            kind: "photo",
+          }
+        }
+      }
+
       if (fromThread) return fromThread
 
       const city = findCity(thread.city)
