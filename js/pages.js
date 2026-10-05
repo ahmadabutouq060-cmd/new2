@@ -772,57 +772,65 @@
     const progress = data.getThreadProgress(t)
 
     return (
-      '<div class="card-host group rounded-2xl overflow-hidden transition-all hover:-translate-y-1 mb-10" style="background-color:#FDFCFA;border:1px solid #D6672B;box-shadow:0 4px 20px rgba(214,103,43,0.18)">' +
+      '<div class="card-host group rounded-3xl overflow-hidden transition-all hover:-translate-y-1 hover:shadow-xl mb-12" style="background-color:#FDFCFA;border:1.5px solid #D6672B;box-shadow:0 8px 30px rgba(214,103,43,0.14)">' +
       '<div class="grid grid-cols-12">' +
-      '<div class="col-span-5 relative overflow-hidden" style="min-height:220px">' +
+      '<div class="col-span-12 md:col-span-5 relative overflow-hidden" style="min-height:280px">' +
       media(
         data.photoFor(t),
         t.title,
-        "absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105",
+        "absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105",
       ) +
-      '<div class="absolute inset-0" style="background:linear-gradient(120deg, rgba(18,33,30,0.55), rgba(18,33,30,0.1))"></div>' +
-      '<div class="absolute top-4 left-4"><span class="text-xs font-body font-semibold px-3 py-1.5 rounded-full uppercase tracking-widest" style="background-color:#A23B17;color:white">Living Mystery</span></div>' +
-      "</div>" +
-      '<div class="col-span-7 p-8">' +
-      '<h3 class="font-display text-2xl font-semibold mb-1" style="color:#12211E">' +
+      '<div class="absolute inset-0" style="background:linear-gradient(135deg, rgba(18,33,30,0.65) 0%, rgba(18,33,30,0.15) 100%)"></div>' +
+      '<div class="absolute top-4 left-4 flex flex-col gap-2 z-10">' +
+      '<span class="text-xs font-body font-bold px-3 py-1.5 rounded-full uppercase tracking-widest shadow-sm" style="background-color:#A23B17;color:white">FLAGSHIP EXPERIENCE</span>' +
+      '<span class="text-xs font-body font-semibold px-3 py-1 rounded-full shadow-sm" style="background-color:rgba(1,62,55,0.9);color:#EDB99E">🧵 Living Mystery</span>' +
+      "</div></div>" +
+      '<div class="col-span-12 md:col-span-7 p-6 md:p-8 flex flex-col justify-between">' +
+      '<div>' +
+      '<div class="text-xs font-body font-semibold tracking-widest uppercase mb-1" style="color:#8C3211">YARMOUK GORGE · NORTHERN JORDAN</div>' +
+      '<h3 class="font-display text-2xl md:text-3xl font-bold mb-2 leading-tight" style="color:#12211E">' +
       E(t.title) +
       "</h3>" +
-      '<p class="text-sm font-body mb-4" style="color:#55635E">' +
+      '<p class="text-sm font-body mb-3 font-medium" style="color:#013E37">' +
       E(t.subtitle) +
       "</p>" +
-      '<p class="text-sm font-body leading-relaxed mb-4" style="color:#4A5C58">A living mystery: four hidden clues, a KHAYT companion, and a path you choose yourself. Every clue is earned by a validated observation, never by simply arriving.</p>' +
+      '<p class="text-sm font-body leading-relaxed mb-4" style="color:#4A5C58">A living mystery embedded in the basalt gorge: four hidden clues, a KHAYT companion, and a path you choose yourself. Every clue is earned by a validated observation on site.</p>' +
       fictionNotice(t) +
-      '<div class="flex items-center gap-5 text-xs font-body mb-5" style="color:#55635E">' +
-      "<span>⊕ " +
+      "</div>" +
+      '<div>' +
+      '<div class="flex flex-wrap items-center gap-4 text-xs font-body mb-4 py-2 px-3 rounded-xl" style="background-color:#F4EFE6;border:1px solid #E0D5C2;color:#12211E">' +
+      '<span class="font-semibold">⊕ ' +
       (t.waypoints || []).length +
       " waypoints</span>" +
-      "<span>◇ " +
+      '<span class="font-semibold" style="color:#013E37">◇ Clues: ' +
       clues.unlocked +
       " / " +
       clues.total +
-      " clues</span>" +
+      "</span>" +
       "<span>⏱ " +
       E(t.duration) +
       "</span>" +
-      "<span>✦ " +
+      '<span class="ml-auto font-bold" style="color:#A23B17">✦ ' +
       record[0].value +
       " ATHAR</span></div>" +
-      '<div class="mb-5"><div class="h-1.5 rounded-full" style="background-color:#E8E0D0">' +
-      '<div class="h-full rounded-full" style="width:' +
+      '<div class="mb-4"><div class="flex justify-between text-xs font-body mb-1" style="color:#55635E"><span>Mystery Progress</span><span class="font-semibold" style="color:#013E37">' +
       progress +
-      '%;background-color:#D6672B"></div></div></div>' +
-      '<div class="flex items-center gap-3">' +
+      '%</span></div><div class="h-2 rounded-full" style="background-color:#E8E0D0">' +
+      '<div class="h-full rounded-full progress-bar" style="width:' +
+      progress +
+      '%"></div></div></div>' +
+      '<div class="flex items-center justify-between gap-3 flex-wrap">' +
       "<button " +
       N("thread", data.heroThreadId) +
-      ' class="card-link px-6 py-3 rounded-full text-sm font-body font-semibold transition-all hover:scale-105" style="background-color:#013E37;color:white">' +
+      ' class="card-link px-8 py-3.5 rounded-full text-sm font-body font-bold transition-all shadow-md hover:shadow-lg" style="background-color:#013E37;color:white">' +
       (progress > 0 ? "Continue the Mystery →" : "Enter the Mystery →") +
       "</button>" +
-      '<span class="text-xs font-body" style="color:#A23B17">' +
+      '<span class="text-xs font-body font-semibold" style="color:#A23B17">' +
       (solved
-        ? "Thread found · " + record[3].value
-        : "Chapter: " + E(data.currentChapter(t))) +
+        ? "✓ Thread found · " + record[3].value
+        : "Current Chapter: " + E(data.currentChapter(t))) +
       "</span>" +
-      "</div></div></div></div>"
+      "</div></div></div></div></div>"
     )
   }
 
@@ -1336,7 +1344,7 @@
       [
         "01",
         "Choose a Thread",
-        "Pick a curated narrative path across Jordan's regions and cultures.",
+        "Pick a curated narrative path across Jordan's regions and living cultures.",
       ],
 
       [
@@ -1347,13 +1355,13 @@
 
       [
         "03",
-        "Answer From the Evidence",
-        "Look, observe, and answer from what is in front of you — not from the internet.",
+        "Answer From Evidence",
+        "Look, observe, and answer from what is in front of you — not from search engines.",
       ],
 
       [
         "04",
-        "Earn ATHAR and Badges",
+        "Earn ATHAR & Badges",
         "Collect badges and ATHAR as you go, then spend your ATHAR in the rewards catalogue.",
       ],
     ]
@@ -1382,160 +1390,95 @@
       '<img src="' +
       data.assets.petraHero +
       '" alt="Petra Treasury, Jordan" class="absolute inset-0 w-full h-full object-cover">' +
-      '<div class="absolute inset-0" style="background:linear-gradient(120deg, rgba(18,33,30,0.88) 35%, rgba(18,33,30,0.82) 100%)"></div>' +
+      '<div class="absolute inset-0" style="background:linear-gradient(135deg, rgba(18,33,30,0.92) 0%, rgba(18,33,30,0.78) 100%)"></div>' +
       '<div class="relative h-full flex items-center"><div class="max-w-7xl mx-auto px-10 w-full grid grid-cols-12 gap-6">' +
-      '<div class="col-span-7 flex flex-col justify-center pt-20">' +
+      '<div class="col-span-12 lg:col-span-7 flex flex-col justify-center pt-20">' +
       NASEEJ.eyebrow({
         color: "#EDB99E",
         width: "w-6",
         margin: "mb-6",
-        text: "Jordan Gamified",
+        text: "JORDAN GAMIFIED · CULTURAL STORYTELLING",
       }) +
-      '<h1 class="font-display text-6xl xl:text-7xl font-semibold leading-tight mb-6" style="color:#F9F7F3">Weave Your<br>' +
+      '<h1 class="font-display text-5xl md:text-6xl xl:text-7xl font-bold leading-tight mb-6" style="color:#F9F7F3">Weave Your<br>' +
       '<em class="not-italic" style="color:#EDB99E">Jordanian</em><br>Story</h1>' +
-      '<p class="font-body text-lg mb-10 max-w-lg leading-relaxed" style="color:rgba(249,247,243,0.9)">Follow curated narrative paths through Jordan\'s landscapes, histories, and living cultures. Collect waypoints, earn rewards, and leave your thread in the national tapestry.</p>' +
-      '<div class="flex items-center gap-4">' +
+      '<p class="font-body text-base md:text-lg mb-8 max-w-xl leading-relaxed" style="color:rgba(249,247,243,0.9)">Follow curated narrative paths through Jordan\'s landscapes, histories, and living cultures. Collect waypoints, earn rewards, and leave your thread in the national tapestry.</p>' +
+      '<div class="flex items-center gap-4 flex-wrap">' +
       "<button " +
       N("discover") +
-      ' class="px-8 py-4 rounded-full font-body font-semibold text-base transition-all hover:scale-105" style="background-color:#013E37;color:white;box-shadow:0 8px 24px rgba(1,62,55,0.35)">Start Your Journey</button>' +
+      ' class="px-8 py-4 rounded-full font-body font-bold text-base transition-all hover:scale-105 shadow-lg" style="background-color:#013E37;color:white;box-shadow:0 8px 24px rgba(1,62,55,0.4)">Start Your Journey</button>' +
       "<button " +
-      N("thread") +
-      ' class="px-8 py-4 rounded-full font-body font-medium text-base transition-all" style="color:#F9F7F3;border:1px solid rgba(249,247,243,0.6)">View Threads →</button>' +
+      N("discover") +
+      ' class="px-8 py-4 rounded-full font-body font-semibold text-base transition-all" style="color:#F9F7F3;border:1px solid rgba(249,247,243,0.6)">Explore Thread Library →</button>' +
       "</div>" +
-      '<div class="flex items-center gap-10 mt-16 pt-8" style="border-top:1px solid rgba(249,247,243,0.15)">' +
+      '<div class="grid grid-cols-4 hero-stats mt-12 pt-6">' +
       data.landingStats
         .map(function (s) {
           return (
-            '<div><div class="font-display text-2xl font-semibold" style="color:#EDB99E">' +
+            '<div class="hero-stat"><div class="font-display text-2xl md:text-3xl font-bold hero-stat-value" style="color:#EDB99E">' +
             s.value +
             "</div>" +
-            '<div class="text-xs font-body" style="color:rgba(249,247,243,0.8)">' +
+            '<div class="hero-stat-label" style="color:rgba(249,247,243,0.85)">' +
             s.label +
             "</div></div>"
           )
         })
         .join("") +
       "</div>" +
-      '<p class="text-xs font-body mt-4 max-w-lg leading-relaxed" style="color:rgba(249,247,243,0.8)">' +
+      '<p class="text-xs font-body mt-4 max-w-lg leading-relaxed" style="color:rgba(249,247,243,0.75)">' +
       E(data.landingStatsNote) +
       "</p></div>" +
-      '<div class="col-span-5 flex items-center justify-end pt-20"><div class="relative w-72 h-72 opacity-60">' +
+      '<div class="col-span-5 hidden lg:flex items-center justify-end pt-20"><div class="relative w-72 h-72 opacity-60">' +
       '<svg viewBox="0 0 280 280" class="w-full h-full">' +
       '<path d="M40 240 Q80 180 140 140 Q200 100 240 40" stroke="#EDB99E" stroke-width="1.5" fill="none" stroke-dasharray="6 3" opacity="0.6"/>' +
       '<path d="M20 160 Q80 140 140 100 Q200 60 260 80" stroke="#EDB99E" stroke-width="1" fill="none" stroke-dasharray="4 4" opacity="0.4"/>' +
       dots +
       "</svg></div></div>" +
       "</div></div>" +
-      '<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2" style="color:rgba(249,247,243,0.8)">' +
-      '<span class="text-xs tracking-widest uppercase font-body">Scroll</span>' +
-      '<div class="w-px h-8" style="background:linear-gradient(to bottom, rgba(249,247,243,0.4), transparent)"></div></div>' +
+      '<div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2" style="color:rgba(249,247,243,0.8)">' +
+      '<span class="text-xs tracking-widest uppercase font-body">Scroll to Explore</span>' +
+      '<div class="w-px h-8" style="background:linear-gradient(to bottom, rgba(249,247,243,0.5), transparent)"></div></div>' +
       "</section>" +
-      '<section class="py-24 px-10 max-w-7xl mx-auto"><div class="grid grid-cols-12 gap-6 mb-14">' +
-      '<div class="col-span-6">' +
+      '<section class="py-20 px-10 max-w-7xl mx-auto"><div class="grid grid-cols-12 gap-6 mb-10">' +
+      '<div class="col-span-12 md:col-span-8">' +
       NASEEJ.eyebrow({
         color: "#8C3211",
         width: "w-5",
-        text: "Popular Threads",
+        text: "FEATURED NARRATIVE THREADS",
       }) +
-      '<h2 class="font-display text-4xl font-semibold" style="color:#12211E">Begin with a Thread</h2></div>' +
-      '<div class="col-span-6 flex items-end justify-end">' +
+      '<h2 class="font-display text-3xl md:text-4xl font-bold" style="color:#12211E">Begin Your Jordanian Journey</h2></div>' +
+      '<div class="col-span-12 md:col-span-4 flex items-end justify-start md:justify-end">' +
       "<button " +
       N("discover") +
-      ' class="text-sm font-body font-medium underline underline-offset-4" style="color:#8C3211">View all ' +
+      ' class="text-sm font-body font-bold underline underline-offset-4" style="color:#8C3211">Explore all ' +
       data.libraryStats.threads +
       " threads →</button></div>" +
       "</div>" +
       heroFeature() +
-      '<div class="grid grid-cols-3 gap-6">' +
+      '<div class="grid grid-cols-1 md:grid-cols-3 gap-6">' +
       data.featuredThreads
-        .map(function (t) {
-          const prog = data.getThreadProgress(t)
-
-          const started = prog > 0
-
-          return (
-            '<div class="card-host featured-thread-card group rounded-2xl overflow-hidden transition-all hover:-translate-y-1" style="background-color:#FDFCFA;border:1px solid #E8E0D0;box-shadow:0 2px 12px rgba(18,33,30,0.06)">' +
-            '<div class="relative overflow-hidden h-48">' +
-            media(
-              data.photoFor(t),
-              t.title,
-              "w-full h-full object-cover transition-transform duration-500 group-hover:scale-105",
-            ) +
-            '<div class="absolute top-3 left-3 flex gap-1.5">' +
-            '<span class="text-xs font-body font-medium px-2.5 py-1 rounded-full" style="background-color:rgba(249,247,243,0.92);color:#8C3211">' +
-            E(t.category) +
-            "</span>" +
-            (started
-              ? '<span class="text-xs font-body font-semibold px-2.5 py-1 rounded-full" style="background-color:#013E37;color:white">In progress</span>'
-              : "") +
-            "</div>" +
-            '<div class="absolute bottom-0 left-0 right-0 h-16" style="background:linear-gradient(to top, rgba(18,33,30,0.5), transparent)"></div></div>' +
-            '<div class="p-5 flex flex-col flex-1">' +
-            '<div class="text-xs font-body mb-1" style="color:#8C3211">' +
-            E(t.region) +
-            "</div>" +
-            '<h3 class="font-display text-lg font-semibold mb-1" style="color:#12211E">' +
-            E(t.title) +
-            "</h3>" +
-            '<p class="text-sm font-body mb-4" style="color:#55635E">' +
-            E(t.hook) +
-            "</p>" +
-            '<div class="flex items-center justify-between text-xs font-body mb-4" style="color:#55635E">' +
-            "<span>⊕ " +
-            t.waypoints +
-            " waypoints</span><span>⏱ " +
-            E(t.duration) +
-            "</span>" +
-            "<span>◈ " +
-            (t.travelers || 0).toLocaleString("en-US") +
-            " weavers</span></div>" +
-            '<div class="featured-thread-foot">' +
-            '<div class="featured-progress">' +
-            (started
-              ? '<div class="flex justify-between text-xs font-body mb-1" style="color:#55635E">' +
-                "<span>Your progress</span><span>" +
-                prog +
-                "%</span></div>" +
-                '<div class="h-1.5 rounded-full" style="background-color:#E8E0D0">' +
-                '<div class="h-full rounded-full" style="width:' +
-                prog +
-                '%;background-color:#013E37"></div></div>'
-              : "") +
-            "</div>" +
-            "<button " +
-            N("thread", t.id) +
-            ' class="card-link w-full py-2.5 rounded-full text-sm font-body font-medium transition-all" style="' +
-            (started
-              ? "background-color:#013E37;color:white"
-              : "background-color:#F9F7F3;color:#12211E;border:1px solid #E8E0D0") +
-            '">' +
-            (started ? "Continue Thread →" : "Begin Thread →") +
-            "</button>" +
-            "</div></div></div>"
-          )
-        })
+        .map(libCard)
         .join("") +
       "</div></section>" +
       '<section class="py-20 px-10" style="background-color:#12211E"><div class="max-w-7xl mx-auto">' +
-      '<div class="text-center mb-16">' +
+      '<div class="text-center mb-14">' +
       NASEEJ.eyebrow({
         color: "#EDB99E",
         width: "w-5",
-        text: "The Process",
+        text: "THE WEAVING PROCESS",
         trailingRule: true,
       }) +
-      '<h2 class="font-display text-4xl font-semibold" style="color:#F9F7F3">How the Loom Works</h2></div>' +
-      '<div class="grid grid-cols-4 gap-8">' +
+      '<h2 class="font-display text-3xl md:text-4xl font-bold" style="color:#F9F7F3">How the Loom Works</h2></div>' +
+      '<div class="grid grid-cols-1 md:grid-cols-4 gap-8">' +
       steps
         .map(function (s) {
           return (
-            '<div class="text-center"><div class="font-display text-5xl font-semibold mb-4" style="color:#D6672B;opacity:0.5">' +
+            '<div class="p-6 rounded-2xl text-center" style="background-color:rgba(249,247,243,0.04);border:1px solid rgba(237,185,158,0.15)"><div class="font-display text-4xl md:text-5xl font-bold mb-3" style="color:#D6672B">' +
             s[0] +
             "</div>" +
-            '<h3 class="font-display text-xl font-semibold mb-3" style="color:#F9F7F3">' +
+            '<h3 class="font-display text-lg font-bold mb-2" style="color:#F9F7F3">' +
             s[1] +
             "</h3>" +
-            '<p class="text-sm font-body leading-relaxed" style="color:rgba(249,247,243,0.8)">' +
+            '<p class="text-xs font-body leading-relaxed" style="color:rgba(249,247,243,0.8)">' +
             s[2] +
             "</p></div>"
           )
@@ -1543,8 +1486,9 @@
         .join("") +
       "</div></div></section>" +
       '<section class="py-24 px-10 max-w-7xl mx-auto text-center">' +
-      '<h2 class="font-display text-5xl font-semibold mb-4" style="color:#12211E">Ready to add your thread<br>to Jordan\'s tapestry?</h2>' +
-      '<p class="font-body text-lg mb-8 max-w-lg mx-auto" style="color:#55635E">This build carries ' +
+      '<div class="p-12 rounded-3xl" style="background-color:#FDFCFA;border:1px solid #E0D5C2;box-shadow:0 10px 30px rgba(18,33,30,0.06)">' +
+      '<h2 class="font-display text-4xl md:text-5xl font-bold mb-4" style="color:#12211E">Ready to add your thread<br>to Jordan\'s tapestry?</h2>' +
+      '<p class="font-body text-base md:text-lg mb-8 max-w-xl mx-auto" style="color:#55635E">This build carries ' +
       data.libraryStats.threads +
       " story threads and " +
       data.libraryStats.waypoints +
@@ -1553,9 +1497,9 @@
       " regions. Start with one thread and see how far you get.</p>" +
       "<button " +
       N("discover") +
-      ' class="px-10 py-4 rounded-full font-body font-semibold text-base transition-all hover:scale-105" style="background-color:#013E37;color:white;box-shadow:0 8px 24px rgba(1,62,55,0.3)">Start Weaving — It\'s Free</button>' +
-      "</section>" +
-      '<footer class="py-10 px-10" style="border-top:1px solid #E8E0D0"><div class="max-w-7xl mx-auto flex items-center justify-between">' +
+      ' class="px-10 py-4 rounded-full font-body font-bold text-base transition-all hover:scale-105 shadow-md" style="background-color:#013E37;color:white">Start Weaving — It\'s Free</button>' +
+      "</div></section>" +
+      '<footer class="py-10 px-10" style="border-top:1px solid #E8E0D0"><div class="max-w-7xl mx-auto flex items-center justify-between flex-wrap gap-4">' +
       '<div class="flex items-center gap-3">' +
       '<img src="' +
       data.assets.logoIcon +
@@ -2263,20 +2207,22 @@
         color: "#8C3211",
         width: "w-5",
         margin: "mb-2",
-        text: "Thread Library",
+        text: "THREAD LIBRARY",
       }) +
-      '<div class="flex items-end justify-between"><h1 class="font-display text-4xl font-semibold" style="color:#12211E">Discover Threads</h1>' +
-      '<p id="lib-count" class="font-body text-sm" style="color:#55635E"></p></div></div>' +
+      '<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">' +
+      '<div><h1 class="font-display text-3xl md:text-4xl font-bold" style="color:#12211E">Discover Jordan\'s Narrative Paths</h1>' +
+      '<p class="font-body text-sm mt-1" style="color:#55635E">Explore 27 hand-crafted threads across 12 governorates. Select a city on the map or filter by category.</p></div>' +
+      '<p id="lib-count" class="font-body text-sm font-semibold" style="color:#8C3211"></p></div></div>' +
       '<div class="px-10 max-w-7xl mx-auto pb-20"><div class="grid grid-cols-12 gap-8">' +
-      '<aside class="col-span-3"><div class="mb-6"><div class="relative">' +
+      '<aside class="col-span-12 lg:col-span-3"><div class="mb-6"><div class="relative">' +
       '<svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style="color:#55635E" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
       '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>' +
-      '<input id="lib-search" type="text" placeholder="Search threads..." class="w-full pl-10 pr-4 py-2.5 rounded-xl text-sm font-body outline-none" style="background-color:#FDFCFA;border:1px solid #E8E0D0;color:#12211E"></div></div>' +
-      '<div class="p-5 rounded-2xl" style="background-color:#FDFCFA;border:1px solid #E8E0D0">' +
-      '<h3 class="font-body font-semibold text-sm mb-4 uppercase tracking-wide" style="color:#12211E">Category</h3>' +
+      '<input id="lib-search" type="text" placeholder="Search threads by title or city..." class="w-full pl-10 pr-4 py-3 rounded-xl text-sm font-body outline-none shadow-sm" style="background-color:#FDFCFA;border:1px solid #E0D5C2;color:#12211E"></div></div>' +
+      '<div class="p-5 rounded-2xl" style="background-color:#FDFCFA;border:1px solid #E0D5C2">' +
+      '<h3 class="font-body font-semibold text-xs mb-3 uppercase tracking-widest" style="color:#8C3211">Filter by Category</h3>' +
       '<div id="lib-cats" class="flex flex-col gap-1.5"></div></div></aside>' +
-      '<main class="col-span-9"><div id="lib-flex" class="flex gap-6 items-start">' +
-      '<div id="lib-map" class="relative rounded-3xl overflow-hidden flex-shrink-0 transition-all duration-500" style="width:100%;background:#F4EFE6;border:1px solid #D8CDB8;box-shadow:0 6px 32px rgba(18,33,30,0.10)">' +
+      '<main class="col-span-12 lg:col-span-9"><div id="lib-flex" class="flex flex-col lg:flex-row gap-6 items-start">' +
+      '<div id="lib-map" class="relative rounded-3xl overflow-hidden flex-shrink-0 transition-all duration-500" style="width:100%;background:#F4EFE6;border:1px solid #D8CDB8;box-shadow:0 6px 32px rgba(18,33,30,0.08)">' +
       '<img src="' +
       data.assets.jordanMap +
       '" alt="Jordan map" style="width:100%;display:block;opacity:0.92" draggable="false">' +
@@ -2291,79 +2237,86 @@
 
     const started = progress > 0
 
+    const diffColor = data.difficultyColor[t.difficulty] || "#013E37"
+
     return (
-      '<div class="card-host group rounded-2xl overflow-hidden transition-all hover:-translate-y-0.5" style="background-color:#FDFCFA;border:1px solid #E8E0D0;box-shadow:0 2px 12px rgba(18,33,30,0.05)">' +
-      '<div class="relative overflow-hidden h-36">' +
+      '<div class="card-host group rounded-2xl overflow-hidden transition-all hover:-translate-y-1 hover:shadow-xl flex flex-col h-full" style="background-color:#FDFCFA;border:1px solid #E0D5C2;box-shadow:0 4px 16px rgba(18,33,30,0.06)">' +
+      '<div class="relative overflow-hidden h-48 flex-shrink-0">' +
       media(
         data.photoFor(t),
         t.title,
         "w-full h-full object-cover transition-transform duration-500 group-hover:scale-105",
       ) +
-      '<div class="absolute inset-0" style="background:linear-gradient(to top, rgba(18,33,30,0.5) 0%, transparent 60%)"></div>' +
-      '<div class="absolute top-3 left-3 flex gap-1.5">' +
-      '<span class="text-xs font-body px-2 py-0.5 rounded-full font-medium" style="background-color:rgba(249,247,243,0.92);color:#8C3211">' +
+      '<div class="absolute inset-0" style="background:linear-gradient(to top, rgba(18,33,30,0.7) 0%, rgba(18,33,30,0.2) 60%, transparent 100%)"></div>' +
+      '<div class="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10">' +
+      '<span class="text-xs font-body px-2.5 py-1 rounded-full font-semibold" style="background-color:#013E37;color:white">' +
       E(t.category) +
       "</span>" +
-      '<span class="text-xs font-body px-2 py-0.5 rounded-full font-medium" style="background-color:rgba(18,33,30,0.72);color:rgba(255,255,255,0.9)">' +
+      '<span class="text-xs font-body px-2.5 py-1 rounded-full font-medium" style="background-color:rgba(18,33,30,0.75);color:#EDB99E">' +
       data.moodEmoji[t.mood] +
       " " +
-      t.mood +
+      E(t.mood) +
       "</span></div>" +
-      '<div class="absolute top-3 right-3"><span class="text-xs font-body px-2 py-0.5 rounded-full font-semibold" style="background-color:rgba(249,247,243,0.92);color:' +
-      (data.difficultyColor[t.difficulty] || "#013E37") +
+      '<div class="absolute top-3 right-3 z-10"><span class="text-xs font-body px-2.5 py-1 rounded-full font-semibold shadow-sm" style="background-color:rgba(253,252,250,0.95);color:' +
+      diffColor +
       '">' +
-      t.difficulty +
+      E(t.difficulty) +
       "</span></div>" +
       (started
-        ? '<div class="absolute bottom-0 left-0 right-0 h-0.5" style="background-color:rgba(1,62,55,0.3)">' +
-          '<div class="h-full" style="width:' +
+        ? '<div class="absolute bottom-0 left-0 right-0 h-1" style="background-color:rgba(1,62,55,0.3)">' +
+          '<div class="h-full progress-bar" style="width:' +
           progress +
-          '%;background-color:#013E37"></div></div>'
+          '%"></div></div>'
         : "") +
       "</div>" +
-      '<div class="p-4"><h3 class="font-display text-sm font-semibold mb-1" style="color:#12211E">' +
+      '<div class="p-5 flex flex-col flex-1 justify-between">' +
+      '<div>' +
+      '<div class="text-xs font-body font-semibold tracking-wider uppercase mb-1" style="color:#8C3211">📍 ' +
+      E(t.region || t.city) +
+      "</div>" +
+      '<h3 class="font-display text-lg font-bold mb-2 leading-snug" style="color:#12211E">' +
       E(t.title) +
       "</h3>" +
-      '<p class="text-xs font-body mb-3 leading-relaxed" style="color:#4A5C58">' +
+      '<p class="text-xs font-body mb-4 line-clamp-2 leading-relaxed" style="color:#4A5C58">' +
       E(t.hook) +
       "</p>" +
-      '<div class="flex items-center gap-3 text-xs font-body mb-3" style="color:#55635E">' +
+      '<div class="flex items-center gap-3 text-xs font-body mb-4" style="color:#55635E">' +
       "<span>⊕ " +
       t.waypoints +
       " stops</span><span>⏱ " +
-      t.duration +
+      E(t.duration) +
       "</span>" +
-      '<span class="ml-auto font-semibold" style="color:#013E37">+' +
+      '<span class="ml-auto font-semibold" style="color:#013E37">⭐ +' +
       t.points +
       " pts</span></div>" +
-      '<div class="flex items-center gap-2 mb-3 px-3 py-2 rounded-lg" style="background-color:#F4EFE6;border:1px solid #E0D5C2">' +
-      '<div class="flex-1 min-w-0"><p class="text-xs font-body" style="color:#55635E">Start</p>' +
-      '<p class="text-xs font-body font-medium truncate" style="color:#12211E">' +
+      '<div class="flex items-center justify-between text-xs py-2 px-3 rounded-xl mb-4" style="background-color:#F4EFE6;border:1px solid #E0D5C2">' +
+      '<div class="flex items-center gap-1.5 min-w-0 flex-1">' +
+      '<span class="w-2 h-2 rounded-full flex-shrink-0" style="background-color:#D6672B"></span>' +
+      '<span class="font-body font-medium truncate" style="color:#12211E">' +
       E(t.start) +
-      "</p></div>" +
-      '<div class="text-xs flex-shrink-0 px-1" style="color:#C9BDA8">→</div>' +
-      '<div class="flex-1 min-w-0 text-right"><p class="text-xs font-body" style="color:#55635E">End</p>' +
-      '<p class="text-xs font-body font-medium truncate" style="color:#12211E">' +
+      "</span></div>" +
+      '<span class="text-xs px-2 flex-shrink-0 font-bold" style="color:#C9BDA8">➔</span>' +
+      '<div class="flex items-center justify-end gap-1.5 min-w-0 flex-1 text-right">' +
+      '<span class="font-body font-medium truncate" style="color:#12211E">' +
       E(t.end) +
-      "</p></div></div>" +
+      "</span>" +
+      '<span class="w-2 h-2 rounded-full flex-shrink-0" style="background-color:#013E37"></span>' +
+      "</div></div>" +
       (started
-        ? '<div class="mb-3"><div class="flex justify-between text-xs font-body mb-1" style="color:#55635E">' +
-          "<span>Progress</span><span>" +
+        ? '<div class="mb-4"><div class="flex justify-between text-xs font-body mb-1" style="color:#55635E">' +
+          '<span>Your Progress</span><span class="font-semibold" style="color:#013E37">' +
           progress +
-          "%</span></div>" +
+          '%</span></div>' +
           '<div class="h-1.5 rounded-full" style="background-color:#E8E0D0">' +
-          '<div class="h-full rounded-full" style="width:' +
+          '<div class="h-full rounded-full progress-bar" style="width:' +
           progress +
-          '%;background-color:#013E37"></div></div></div>'
+          '%"></div></div></div>'
         : "") +
+      '</div>' +
       "<button " +
       N("thread", t.id) +
-      ' class="card-link w-full py-2 rounded-full text-xs font-body font-semibold" style="' +
-      (started
-        ? "background-color:#013E37;color:white"
-        : "background-color:transparent;color:#12211E;border:1px solid #E8E0D0") +
-      '">' +
-      (started ? "Continue Thread →" : "View Thread →") +
+      ' class="card-link w-full py-3 rounded-full text-xs font-body font-semibold transition-all shadow-sm" style="background-color:#013E37;color:white">' +
+      (started ? "Continue Thread →" : "Explore Thread →") +
       "</button></div></div>"
     )
   }
@@ -2418,13 +2371,13 @@
         return (
           '<button data-act="cat" data-v="' +
           E(cat) +
-          '" class="flex items-center justify-between px-3 py-2 rounded-lg text-sm font-body font-medium transition-all text-left" style="' +
-          (on ? "background-color:#A23B17;color:white" : "color:#12211E") +
+          '" class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-body font-semibold transition-all text-left" style="' +
+          (on ? "background-color:#A23B17;color:white" : "background-color:transparent;color:#12211E") +
           '"><span>' +
           cat +
           "</span>" +
-          '<span class="text-xs" style="color:' +
-          (on ? "rgba(255,255,255,0.9)" : "#55635E") +
+          '<span class="text-xs font-semibold px-2 py-0.5 rounded-full" style="' +
+          (on ? "background-color:rgba(255,255,255,0.25);color:white" : "background-color:#F4EFE6;color:#55635E") +
           '">' +
           n +
           "</span></button>"
@@ -2432,7 +2385,7 @@
       })
       .join("")
 
-    map.style.width = sc ? "52%" : "100%"
+    map.style.width = sc ? "48%" : "48%"
 
     const pins = data.cities
       .map(function (c) {
@@ -2526,10 +2479,10 @@
       all.setAttribute("data-v", "")
 
       all.className =
-        "absolute top-4 right-4 text-xs font-body font-medium px-3 py-1.5 rounded-full"
+        "absolute top-4 right-4 text-xs font-body font-semibold px-3.5 py-1.5 rounded-full shadow-sm"
 
       all.style.cssText =
-        "background-color:rgba(253,252,250,0.94);border:1px solid #D8CDB8;color:#8C3211"
+        "background-color:rgba(253,252,250,0.96);border:1px solid #D8CDB8;color:#8C3211"
 
       all.textContent = "\u2190 All cities"
 
@@ -2537,13 +2490,6 @@
     }
 
     let panel = document.getElementById("lib-panel")
-
-    if (!sc) {
-      if (panel && panel.parentNode) panel.parentNode.removeChild(panel)
-
-      return
-    }
-
     const fresh = !panel
 
     if (fresh) {
@@ -2551,24 +2497,28 @@
 
       panel.id = "lib-panel"
 
-      panel.className = "flex-1 overflow-y-auto"
+      panel.className = "flex-1 overflow-y-auto w-full"
 
-      panel.style.maxHeight = "660px"
+      panel.style.maxHeight = "720px"
 
       flex.appendChild(panel)
     }
 
     const keepScroll = fresh ? 0 : panel.scrollTop
 
-    const list = matching.filter(inCity)
+    const list = sc ? matching.filter(inCity) : matching
 
-    const city = data.getCity(sc)
+    const city = sc ? data.getCity(sc) : null
+
+    const headingText = sc
+      ? (city ? city.label : sc) + " Threads"
+      : "All Narrative Threads"
 
     panel.innerHTML =
-      '<div class="mb-5"><p class="text-xs font-body font-medium uppercase tracking-widest mb-1" style="color:#8C3211">' +
-      E(city ? city.label : sc) +
+      '<div class="mb-5 flex items-center justify-between"><p class="text-xs font-body font-semibold uppercase tracking-widest" style="color:#8C3211">' +
+      E(headingText) +
       "</p>" +
-      '<h2 class="font-display text-xl font-semibold" style="color:#12211E">' +
+      '<h2 class="font-display text-xl font-bold" style="color:#12211E">' +
       list.length +
       " Thread" +
       (list.length !== 1 ? "s" : "") +
@@ -2576,8 +2526,8 @@
       (list.length === 0
         ? '<div class="text-center py-12 rounded-2xl" style="background-color:#FDFCFA;border:1px solid #E8E0D0">' +
           '<p class="font-body text-sm" style="color:#55635E">No threads match your current filters.</p>' +
-          '<button data-act="clear" class="mt-3 text-xs font-body font-medium" style="color:#8C3211">Clear filters</button></div>'
-        : '<div class="flex flex-col gap-4">' +
+          '<button data-act="clear" class="mt-3 text-xs font-body font-semibold" style="color:#8C3211">Clear filters</button></div>'
+        : '<div class="grid grid-cols-1 xl:grid-cols-2 gap-6">' +
           list.map(libCard).join("") +
           "</div>")
 
