@@ -1494,8 +1494,7 @@
           challenge:
             "Harvest olives from at least three trees using the traditional raking method. Weigh your harvest and estimate how many litres of oil a full season's yield from those trees would produce.",
 
-          image: "assets/places/ajloun/olive-grove-harvest.svg",
-          imageStatus: "placeholder",
+          image: "assets/places/ajloun/olive-grove-harvest.jpg",
         },
 
         {
@@ -3790,7 +3789,7 @@
       hook: "Follow a single olive from the ancient tree to the stone press to a guesthouse table — all in one day.",
 
       city: "Ajloun",
-      region: "Ajloun Olive Groves", image: "assets/places/ajloun/olive-grove-harvest.svg", imageStatus: "placeholder", imageSubject: "Olive Grove Harvest",
+      region: "Ajloun Olive Groves", image: "assets/places/ajloun/olive-grove-harvest.jpg", imageSubject: "Olive Grove Harvest",
 
       waypoints: 4,
       duration: "1 day",
