@@ -1385,12 +1385,6 @@
       '<div class="absolute inset-0" style="background:linear-gradient(120deg, rgba(18,33,30,0.88) 35%, rgba(18,33,30,0.82) 100%)"></div>' +
       '<div class="relative h-full flex items-center"><div class="max-w-7xl mx-auto px-10 w-full grid grid-cols-12 gap-6">' +
       '<div class="col-span-7 flex flex-col justify-center pt-20">' +
-      NASEEJ.eyebrow({
-        color: "#EDB99E",
-        width: "w-6",
-        margin: "mb-6",
-        text: "WEAVING STORIES · CONNECTING JORDAN",
-      }) +
       '<h1 class="font-display text-6xl xl:text-7xl font-semibold leading-tight mb-6" style="color:#F9F7F3">Weave Your<br>' +
       '<em class="not-italic" style="color:#EDB99E">Jordanian</em><br>Story</h1>' +
       '<p class="font-body text-lg mb-10 max-w-lg leading-relaxed" style="color:rgba(249,247,243,0.9)">Follow curated narrative paths through Jordan\'s landscapes, histories, and living cultures. Collect waypoints, earn rewards, and leave your thread in the national tapestry.</p>' +
